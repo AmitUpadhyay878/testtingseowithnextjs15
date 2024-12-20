@@ -1,0 +1,66 @@
+$primary:#FF8BA7;
+$secondary: #B285FC;
+$black: #000000;
+$white: #FFFFFF;
+$grey2B : #2B2B2B;
+$grey26 : #262626;
+$grey1B :#1B1B1B;
+$greyC4: #434343c4;
+$greyAA: #AAAAAA;
+$grey1A: #1A1A1A;
+$grey1A: #1A1A1A;
+$grey4F: #4F4F4F;
+$grey13: #131313;
+$grey0F : #FFFFFF0F;
+$greyB7 : #B7B7B7;
+$red : #ff174f;
+$yellow: #E3E8AF;
+$blue: #2B40FF;
+$greyB6 : #B6B6B6;
+$purple: #7A4CB9;
+$PrimaryGradint : linear-gradient(90deg, $secondary 0%, $primary 100%);
+$SecondaryGradint : linear-gradient(90deg, #858AFC 0%, #8BEAFF 100%);
+
+@mixin background-clip{
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-fill-color: transparent !important;
+}
+
+@mixin white-gradient-background-clip {
+    background: linear-gradient(90deg, $white 0%, $white 100%);
+    @include background-clip;
+}
+
+@mixin primary-gradient-background-clip {
+    background: $PrimaryGradint;
+    @include background-clip;
+}
+
+@mixin secondary-gradient-background-clip {
+    background: $SecondaryGradint;
+    @include background-clip;
+}
+
+@mixin hover-primary-gradient-text{
+    position: relative;
+    @include white-gradient-background-clip;
+    transition: color 0.3s, background-position 0.3s;
+    &::before{
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
+        @include primary-gradient-background-clip;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    &:hover,&.active{
+        &::before{
+            opacity: 1;
+        }
+    }
+}

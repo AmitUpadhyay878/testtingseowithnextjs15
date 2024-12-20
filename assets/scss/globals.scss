@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import'../scss/partial';
+@import'../scss/variables';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+*{
+  box-sizing: border-box;
+}
+:focus-visible{
+  outline: none !important;
+}
+
+body{
+  // for Internet Explorer and Edge scrollbar
+  -ms-overflow-style: scrollbar; 
+  scrollbar-face-color: #686868; 
+  scrollbar-track-color: #4b4b4b; 
+  scrollbar-highlight-color: transparent;
+  scrollbar-shadow-color: transparent;
+  
+
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 300;
+  background-color: $black;
+  color: $white;
+  margin: 0;
+  @media (min-width: $lg) {
+      font-size: 16px;
+  }
+  @media (min-width: $xl) {
+      font-size: 18px;
+  }
+  @media (min-width: $xxl) {
+      font-size: 20px;
+  }
+  // For Webkit Browsers (Chrome, Safari, Edge)Scrollbar
+  &::-webkit-scrollbar {
+      width: 12px; 
+      height: 12px; 
+  }
+  &::-webkit-scrollbar-track {
+      background: #4b4b4b;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      background: #686868;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+}

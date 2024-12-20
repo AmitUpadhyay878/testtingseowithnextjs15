@@ -1,0 +1,131 @@
+
+@import '@/assets/scss/variables';
+@import '@/assets/scss/partial';
+
+.HomeBannerSection{
+    display: block !important;
+    canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    // &::before{
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: url('../../../../../../public/images/banner-bg-line.webp') repeat-x;
+    //     background: url('https://d19cx7uv5wsln6.cloudfront.net/assets/images/banner-bg-line.webp') repeat-x;
+    //     background-position: left center;
+    //     background-size: contain;
+    //     z-index: -1;
+    // }
+    .BannerWrapper{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        @media (min-width: $xsm){
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+        @media (min-width: $md){
+            max-width: 700px;
+            min-height: calc(100vh - 91px);
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @media (min-width: $lg){
+            max-width: 960px;
+        }
+        @media (min-width: $xl){
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+        @media (min-width: $xxl){
+            padding-top: 170px;
+            padding-bottom: 170px;
+            min-height: calc(100vh - 114px);
+            max-width: 1511px;
+        }
+        .BannerMarquee{
+            max-width: 800px;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            padding: 1px;
+            @media (min-width: $md){
+                margin: 0 auto 24px;
+            }
+            @media (min-width: $xl){
+                margin: 0 auto 32px;
+            }
+            @media (min-width: $xxl){
+                margin: 0 auto 50px;
+            }
+            .MarqueeList{
+                padding: 8px 1px;
+                border-radius: 276px;
+                --borderWidth: 1px;
+                background: $black;
+                position: relative;
+                border-radius: 276px;
+                @media (min-width: $xsm){
+                    padding: 14px 1px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                    height: calc(100% + 2px);
+                    width: calc(100% + 2px);
+                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 56%);
+                    border-radius: 276px;
+                    z-index: -1;
+                    animation: animatedgradient 2s ease alternate infinite;
+                    background-size: 300% 300%;
+                }
+                @keyframes animatedgradient {
+                    0% {
+                        background-position: 0%;
+                    }
+                    100% {
+                        background-position: revert;
+                    }
+                }
+                .MarqueeItems{
+                    .MarqueeText{
+                        position: relative;
+                        font-size: 14px;
+                        line-height: 1.4;
+                        padding-left: 15px;
+                        margin-right: 10px;
+                        text-transform: capitalize;
+                        width: max-content;
+                        @media (min-width: $lg) {
+                            font-size: 16px;
+                        }
+                        @media (min-width: $xl) {
+                            font-size: 18px;
+                            line-height: 1.18;
+                        }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            width: 5px;
+                            height: 5px;
+                            background-color: $white;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

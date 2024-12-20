@@ -1,0 +1,9 @@
+INDEX_FOLLOW=false
+NEXT_PUBLIC_WP_API_URL=https://multiqos.com/blogs/graphql/
+NEXT_PUBLIC_BACKEND_URL=https://api.multiqos.com/api/v1
+NEXT_PUBLIC_STATIC_URL=https://d19cx7uv5wsln6.cloudfront.net
+NEXT_PUBLIC_ENABLE_SCRIPT=true
+NEXT_PUBLIC_PLAYSTORE_URL=https://play.google.com/store/apps/details?id=
+NEXT_PUBLIC_APPLESTORE_URL=https://apps.apple.com/in/app/
+# NEXT_PUBLIC_CHATBOAT_URL=https://staging.multiqos.com:8024/chatbot
+# NEXT_PUBLIC_CHATBOAT_URL=https://staging.multiqos.com:8024/
